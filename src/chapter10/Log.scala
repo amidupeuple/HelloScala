@@ -1,6 +1,6 @@
 package chapter10
 
-trait Logger {
+/*trait Logger {
   def log(msg: String)
 }
 
@@ -38,4 +38,4 @@ object AppRunner extends App {
   sg1.generate()
   val sg2 = new {override val shift = 0} with SignalGenerator
   sg2.generate()
-}
+}*/
