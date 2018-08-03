@@ -18,7 +18,11 @@ class ASCIIArt(val artObject: String) {
       val diff = otherArr.length - thisArr.length
       val thisArrBuff = thisArr.toBuffer
       for (i <- 0 to diff) {
-        thisArrBuff ++ (" " * maxRowLength)
+        if (maxRowLength != 0) {
+          thisArrBuff ++ (" " * maxRowLength)
+        } else {
+          thisArrBuff
+        }
       }
       thisArr = thisArrBuff.toArray
     } else {
@@ -42,10 +46,10 @@ class ASCIIArt(val artObject: String) {
 
   def * (n: Integer): ASCIIArt = {
     var res: ASCIIArt = new ASCIIArt()
-    for (i <- 0 to n-2) {
+    for (i <- 0 to n-1) {
       res = res + this
     }
-    res + this
+    res
   }
 
   def showArt() = {
